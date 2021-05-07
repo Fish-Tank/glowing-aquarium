@@ -8,3 +8,6 @@ catfish 33.0 Murten
 2 1.0 2 
 0 33.0 Murtensee 
 
+2 12.0 Vierwaldstättersee 
+1 43.0 Genfersee 
+2 100.0 murtensee 

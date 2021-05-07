@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/try_anouk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Welcome fisherman.py" beforeDir="false" afterPath="$PROJECT_DIR$/Welcome fisherman.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fish.txt" beforeDir="false" afterPath="$PROJECT_DIR$/fish.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.try_anouk">
+  <component name="RunManager" selected="Python.Welcome fisherman">
     <configuration name="Creating Excel Sheet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -127,14 +146,17 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Welcome fisherman" />
         <item itemvalue="Python.try_anouk" />
         <item itemvalue="Python.Read the Fish" />
-        <item itemvalue="Python.Welcome fisherman" />
         <item itemvalue="Python.Creating Excel Sheet" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="" />
@@ -156,5 +178,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1620390334939">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1620390334939" />
+    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1620390334937">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1620390334937" />
+    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1620390334937">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1620390334937" />
+    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1620390334938">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1620390334938" />
   </component>
 </project>
