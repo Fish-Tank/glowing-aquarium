@@ -117,6 +117,11 @@ while True:
                     print(commands[i])
             elif user_input == "fish":
                 type = input("Enter fish type :>> ")
+
+
+
+
+
                 while True:
                     length = input("Please enter fish length: ")
                     try:

@@ -9,3 +9,6 @@ egli 21.0 murtensee fritz
 catflish 1.0 murtensee hallo
 hecht 33.0 Murtensee hallo
 
+2 12.0 Vierwaldstättersee 
+1 43.0 Genfersee 
+2 100.0 murtensee 
