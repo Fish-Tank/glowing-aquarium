@@ -175,25 +175,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1620390334939">
+    <state width="709" height="244" key="GridCell.Tab.0.bottom" timestamp="1620395409288">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1620390334939" />
-    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1620390334937">
+    <state width="709" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1620395409288" />
+    <state width="709" height="244" key="GridCell.Tab.0.center" timestamp="1620395409286">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1620390334937" />
-    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1620390334937">
+    <state width="709" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1620395409286" />
+    <state width="709" height="244" key="GridCell.Tab.0.left" timestamp="1620395409284">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1620390334937" />
-    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1620390334938">
+    <state width="709" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1620395409284" />
+    <state width="709" height="244" key="GridCell.Tab.0.right" timestamp="1620395409287">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1620390334938" />
-    <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620392171100">
+    <state width="709" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1620395409287" />
+    <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1620395442481">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1620392171100" />
+    <state x="511" y="368" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.900@0.0.1440.900" timestamp="1620395442481" />
   </component>
 </project>
