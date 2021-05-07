@@ -11,6 +11,7 @@ current_user = {
     "password": None,
 }
 
+print('Welcome to the Fishing-Tournament App... ')
 
 def save_user_data(username, email, password):
     accounts_file = open("accounts.txt", "a")
@@ -117,7 +118,7 @@ while True:
             elif user_input == "fish":
                 type = input("Enter fish type :>> ")
                 while True:
-                    length = input("Please enter fish length")
+                    length = input("Please enter fish length: ")
                     try:
                         length = float(length)
                         break
