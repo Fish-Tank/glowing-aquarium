@@ -1,10 +1,11 @@
-Hecht 108 Murtensee 
-Hecht 64 Bielersee
-Egli 21.2 Murtensee 
-hecht 80.0 Neuenburgersee 
-catfish 33.0 Murten 
-<class 'type'> 23.0 Murtensee 
-1 21.0 murtensee 
-2 1.0 2 
-0 33.0 Murtensee 
+fish length lake password
+Hecht 108 Murtensee hallo
+Hecht 64 Bielersee fish
+Egli 21.2 Murtensee fritz
+hecht 80.0 Neuenburgersee taxifahrer
+catfish 33.0 Murten taxifahrer
+<class 'type'> 23.0 Murtensee fritz
+1 21.0 murtensee fritz
+2 1.0 2 hallo
+0 33.0 Murtensee hallo
 
