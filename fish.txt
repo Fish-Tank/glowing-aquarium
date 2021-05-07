@@ -4,8 +4,8 @@ Hecht 64 Bielersee fish
 Egli 21.2 Murtensee fritz
 hecht 80.0 Neuenburgersee taxifahrer
 catfish 33.0 Murten taxifahrer
-<class 'type'> 23.0 Murtensee fritz
-1 21.0 murtensee fritz
-2 1.0 2 hallo
-0 33.0 Murtensee hallo
+hecht 23.0 Murtensee fritz
+egli 21.0 murtensee fritz
+catflish 1.0 murtensee hallo
+hecht 33.0 Murtensee hallo
 
