@@ -165,3 +165,11 @@ while True:
         else:
             print("I don't understand.\
             Please enter a valid command or type 'help'.")
+
+import pandas as pd
+
+account_data = pd.read_csv("accounts.txt", delimiter=" ")
+fish_data = pd.read_csv("fish.txt", delimiter=" ")
+
+personal_catches = (fish_data.loc[fish_data['password'] == password])
+print(personal_catches)

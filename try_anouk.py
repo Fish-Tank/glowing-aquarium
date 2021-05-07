@@ -1,6 +1,6 @@
 import pandas as pd
 account_data = pd.read_csv("accounts.txt", delimiter=" ")
-fish_data = pd.read_csv("fish.txt", delimiter = " ")
+fish_data = pd.read_csv("fish.txt", delimiter=" ")
 
 password = "hallo"
 
