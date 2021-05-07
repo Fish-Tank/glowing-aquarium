@@ -4,7 +4,6 @@ fish_data = pd.read_csv("fish.txt", delimiter=" ")
 
 password = "hallo"
 
-
 personal_catches = (fish_data.loc[fish_data['password'] == password])
 print(personal_catches)
 

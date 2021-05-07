@@ -4,5 +4,4 @@ anouk anouk.heiz@fishing.com fish
 Nicolas nicolas@hsg taxifahrer
 Hans hans@sdfsd fritz
 Alex alex@fishing.com Fisch
-choco loco@coco wasser 
-bier bier@ comp 
+
