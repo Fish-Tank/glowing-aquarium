@@ -1,15 +1,14 @@
-fish length lake password
-Hecht 108 Murtensee hallo
+fish length lake username
+Hecht 108 Murtensee damian
 Hecht 64 Bielersee fish
 Egli 21.2 Murtensee fritz
 hecht 80.0 Neuenburgersee taxifahrer
 catfish 33.0 Murten taxifahrer
 hecht 23.0 Murtensee fritz
 egli 21.0 murtensee fritz
-catflish 1.0 murtensee hallo
-hecht 33.0 Murtensee hallo
-
-2 12.0 Vierwaldstättersee 
-1 43.0 Genfersee 
-2 100.0 murtensee 
-1 35.2 Bodensee 
+catflish 1.0 murtensee damian
+hecht 33.0 Murtensee damian
+hecht 12.0 Vierwaldstättersee damian
+egli 43.0 Genfersee fish
+catfish 100.0 murtensee hallo
+egli 35.2 Bodensee fritz

@@ -1,4 +1,6 @@
-
+import pandas as pd
+account_data = pd.read_csv("accounts.txt", delimiter=" ")
+fish_data = pd.read_csv("fish.txt", delimiter=" ")
 
 commands = [
     "exit > exit the program",
@@ -6,7 +8,10 @@ commands = [
     "create account > to create a new user",
     "login > to login to your account",
     "logout > to logout your account",
-    "fish > enter a fish"
+    "fish > enter a fish",
+    "profile > show all my profile details ",
+    "achievements > show me my cought fish",
+    "rating list > enter a fish",
 ]
 
 current_user = {
@@ -23,9 +28,9 @@ def save_user_data(username, email, password):
     accounts_file.close()
     print("Account created sucessfully!")
 
-def save_fish_data(type, length, lake):
+def save_fish_data(type, length, lake, user_name):
     fish_file = open("fish.txt", "a")
-    fish_file.write(f"{type} {length} {lake} \n")
+    fish_file.write(f"{type} {length} {lake} {user_name} \n")
     fish_file.close()
     print("Catch submitted sucessfully!")
 
@@ -66,6 +71,8 @@ def is_digit(check_input):
     if check_input.isdigit():
         return True
     return False
+
+
 
 fishtype_list = ['perch' , 'pike' , 'catfish']
 
@@ -158,18 +165,22 @@ while True:
                     print("This is not a number! Is it so hard to enter a number? ")
 
             lake = input("Enter lake :>> ")
+            user_name = input("Enter the username who caught the fish: ")
             # save data
-            save_fish_data(type, length, lake)
+            save_fish_data(type, length, lake, user_name)
 
+        elif user_input == 'achievements':
+            user_name = input("Enter your name to search: ")
+            personal_catches = (fish_data.loc[fish_data['username'] == user_name])
+            print(personal_catches)
+
+        elif user_input == 'profile':
+            user_name = input("Enter your name to search: ")
+            personal_catches = (account_data.loc[account_data['username'] & ['email'] & ['password']])
+            print(personal_catches)
 
         else:
             print("I don't understand.\
             Please enter a valid command or type 'help'.")
 
-import pandas as pd
 
-account_data = pd.read_csv("accounts.txt", delimiter=" ")
-fish_data = pd.read_csv("fish.txt", delimiter=" ")
-
-personal_catches = (fish_data.loc[fish_data['password'] == password])
-print(personal_catches)
