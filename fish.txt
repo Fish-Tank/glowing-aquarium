@@ -7,3 +7,4 @@ catfish 33.0 Murten
 1 21.0 murtensee 
 2 1.0 2 
 0 33.0 Murtensee 
+
