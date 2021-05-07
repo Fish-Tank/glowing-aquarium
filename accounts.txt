@@ -1,5 +1,5 @@
-damian damian.sdfsdf@sdfsdf hallo 
-anouk anouk.heiz@fishing.com fish 
+damian damian.sdfsdf@sdfsdf hallo
+anouk anouk.heiz@fishing.com fish
 Nicolas nicolas@hsg taxifahrer
 Hans hans@sdfsd fritz
-Alex alex@fishing.com Fisch 
+Alex alex@fishing.com Fisch
