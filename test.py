@@ -176,7 +176,7 @@ while True:
 
         elif user_input == 'profile':
             user_name = input("Enter your name to search: ")
-            personal_catches = (account_data.loc[account_data['username'] & ['email'] & ['password']])
+            personal_catches = (account_data.loc[account_data['username'] == user_name])
             print(personal_catches)
 
         else:
