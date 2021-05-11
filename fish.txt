@@ -12,4 +12,3 @@ type length lake username
 2 43.0 Genfersee Hans
 1 100.0 Murtensee Hans
 0 35.2 Bodensee Hans
-
