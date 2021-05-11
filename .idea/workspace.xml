@@ -19,7 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="" />
+    <list default="true" id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Welcome fisherman.py" beforeDir="false" afterPath="$PROJECT_DIR$/Welcome fisherman.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/try_anouk.py" beforeDir="false" afterPath="$PROJECT_DIR$/try_anouk.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +50,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file:///Library/Python/3.8/site-packages/pandas/io/parsers.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="1s9oQhW9Lc8DRRmhQwCFb3e1Eiy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -54,29 +64,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.try_anouk">
-    <configuration name="Creating Excel Sheet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="/usr/local/bin/python3.9" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Creating Excel Sheet.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Read the Fish" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
+  <component name="RunManager" selected="Python.test">
+    <configuration name="Login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="glowing-aquarium" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -88,7 +80,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Read the Fish.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Login.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -110,6 +102,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Welcome fisherman.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="parsers" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="glowing-aquarium" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="/Library/Python/3.8/site-packages/pandas/io" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="/Library/Python/3.8/site-packages/pandas/io/parsers.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -162,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.try_anouk" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.parsers" />
         <item itemvalue="Python.Welcome fisherman" />
-        <item itemvalue="Python.Read the Fish" />
-        <item itemvalue="Python.Creating Excel Sheet" />
+        <item itemvalue="Python.Login" />
+        <item itemvalue="Python.try_anouk" />
       </list>
     </recent_temporary>
   </component>
