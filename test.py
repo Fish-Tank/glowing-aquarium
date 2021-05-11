@@ -170,11 +170,13 @@ while True:
             save_fish_data(type, length, lake, user_name)
 
         elif user_input == 'achievements':
+            while True:
             user_name = input("Enter your name to search: ")
             personal_catches = (fish_data.loc[fish_data['username'] == user_name])
             print(personal_catches)
 
         elif user_input == 'profile':
+            while True:
             user_name = input("Enter your name to search: ")
             personal_catches = (account_data.loc[account_data['username'] == user_name])
             print(personal_catches)
