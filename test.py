@@ -63,16 +63,6 @@ def log_out():
     current_user["name"] = None
     print("You logged out.")
 
-def is_digit(check_input):
-    '''
-    function checking if your string is a pure digit, int
-    return : bool
-    '''
-    if check_input.isdigit():
-        return True
-    return False
-
-
 
 fishtype_list = ['perch' , 'pike' , 'catfish']
 
@@ -111,23 +101,6 @@ while True:
 
             log_in()
 
-            command = [
-
-                "exit > exit the program and submit the fish",
-
-                "help > show all the commands",
-
-                "fish > enter a fish",
-
-            ]
-
-            current_user = {
-
-                "name": None,
-
-                "password": None,
-
-            }
         elif user_input == "fish":
 
             while True:
@@ -170,17 +143,32 @@ while True:
             save_fish_data(type, length, lake, user_name)
 
         elif user_input == 'achievements':
-            user_name = input("Enter your name to search: ")
-            personal_catches = (fish_data.loc[fish_data['username'] == user_name])
-            print(personal_catches)
+            while True:
+                user_name = input("Enter your name to search: ")
+                new_account_data = account_data[['username']]
+                row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+                if user_name in row:
+                    personal_catches = (fish_data.loc[fish_data['username'] == user_name])
+                    print(personal_catches)
+                    break
+                else:
+                    print("This this username doesn't exist!")
 
         elif user_input == 'profile':
             user_name = input("Enter your name to search: ")
-            personal_catches = (account_data.loc[account_data['username'] & ['email'] & ['password']])
-            print(personal_catches)
+            new_account_data = account_data[['username']]
+            row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+            if user_name in row:
+                personal_catches = (account_data.loc[account_data['username'] == user_name])
+                print(personal_catches)
+                break
+            else:
+                print("This this username doesn't exist!")
+
+        elif user_input == 'rating list':
+           fish_data = fish_data[['type', 'length', 'lake', 'username']]
+           print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
 
         else:
             print("I don't understand.\
             Please enter a valid command or type 'help'.")
-
-
