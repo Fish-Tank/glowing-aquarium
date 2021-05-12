@@ -1,7 +1,11 @@
+#Welcome to the fisherman program. In this program a user can upload this catches and can compare it with others
+
+#Import Data. One is for the account and the second is for the fish
 import pandas as pd
 account_data = pd.read_csv("accounts.txt", delimiter=" ")
 fish_data = pd.read_csv("fish.txt", delimiter=" ")
 
+#Commands for the program.
 commands = [
     "exit > exit the program",
     "help > show all the commands",
@@ -14,26 +18,32 @@ commands = [
     "rating list > enter a fish",
 ]
 
+#Current user
 current_user = {
     "name": None,
     "password": None,
 }
 
+#Introduction mesage for the user
 print('Welcome to the Fishing-Tournament App... ')
 
-
+#Open a text file for appending text
+# Create user with username, email and password. If sucessfully created, progam continues.
 def save_user_data(username, email, password):
     accounts_file = open("accounts.txt", "a")
     accounts_file.write(f"{username} {email} {password} \n")
     accounts_file.close()
     print("Account created sucessfully!")
 
+#Open a text file for appending text
+#Enter data for your catch (type, length, user_name).
 def save_fish_data(type, length, lake, user_name):
     fish_file = open("fish.txt", "a")
     fish_file.write(f"{type} {length} {lake} {user_name} \n")
     fish_file.close()
     print("Catch submitted sucessfully!")
 
+#Open for text file for reading text
 def user_exist(username, password):
     accounts_file = open("accounts.txt", "r")
     accounts_file_data = accounts_file.readlines()
@@ -46,7 +56,7 @@ def user_exist(username, password):
     accounts_file.close()
     return exist
 
-
+#To log in the program
 def log_in():
     user_name = input("Enter your user name:>> ")
     password = input("Enter your user password:>> ")
@@ -58,11 +68,12 @@ def log_in():
     else:
         print("Account does not exist or you entered user name or password wrong!")
 
-
+#To log out from your account
 def log_out():
     current_user["name"] = None
     print("You logged out.")
 
+#Function checking if your string is a pure digit.
 def is_digit(check_input):
     '''
     function checking if your string is a pure digit, int
@@ -72,10 +83,10 @@ def is_digit(check_input):
         return True
     return False
 
-
-
+#list of all possible fishes to catch
 fishtype_list = ['perch' , 'pike' , 'catfish']
 
+#Menu for creating and save user data
 while True:
         if current_user["name"] == None:
             user_input = input("Enter a command or type help :>> ").lower()
@@ -106,7 +117,7 @@ while True:
             # save data
             save_user_data(user_name, email, password1)
 
-
+#login for tournament
         elif user_input == "login":
 
             log_in()
@@ -169,7 +180,7 @@ while True:
             # save data
             save_fish_data(type, length, lake, user_name)
 
-
+#data output
         elif user_input == 'achievements':
             while True:
                 user_name = input("Enter your name to search: ")
