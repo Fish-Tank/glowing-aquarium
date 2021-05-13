@@ -1,4 +1,8 @@
 username email password
-damian damian@fish.com panda 
-anouk anouk@fish.com fish 
-nicolas nicolas@fish.com hase 
+damian damian@fish coffee
+anouk anouk@fish fish
+fish fish@fish fish
+coffee coffee@fish fish
+labello labello@fish fish
+samuel samuel@fish fish
+appenzeller app@ water
