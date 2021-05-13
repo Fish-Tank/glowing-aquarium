@@ -20,5 +20,5 @@ Have fun! :)
 
 
 ## Credits
-Keith Galli/pandas: Great tutorial for data science with pandas
-Mtanash/login-system: Great basic login system
+- Keith Galli/pandas: Great tutorial for data science with pandas
+- Mtanash/login-system: Great basic login system
