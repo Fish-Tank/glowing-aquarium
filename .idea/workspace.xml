@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +60,7 @@
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.Welcome fisherman">
     <configuration name="Login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="glowing-aquarium" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,9 +168,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Welcome fisherman" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.parsers" />
-        <item itemvalue="Python.Welcome fisherman" />
         <item itemvalue="Python.Login" />
         <item itemvalue="Python.try_anouk" />
       </list>
@@ -203,5 +201,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1419" height="200" key="GridCell.Tab.0.bottom" timestamp="1620886804231">
+      <screen x="0" y="25" width="1440" height="807" />
+    </state>
+    <state width="1419" height="200" key="GridCell.Tab.0.bottom/0.25.1440.807@0.25.1440.807" timestamp="1620886804231" />
+    <state width="1419" height="200" key="GridCell.Tab.0.center" timestamp="1620886804229">
+      <screen x="0" y="25" width="1440" height="807" />
+    </state>
+    <state width="1419" height="200" key="GridCell.Tab.0.center/0.25.1440.807@0.25.1440.807" timestamp="1620886804229" />
+    <state width="1419" height="200" key="GridCell.Tab.0.left" timestamp="1620886804229">
+      <screen x="0" y="25" width="1440" height="807" />
+    </state>
+    <state width="1419" height="200" key="GridCell.Tab.0.left/0.25.1440.807@0.25.1440.807" timestamp="1620886804229" />
+    <state width="1419" height="200" key="GridCell.Tab.0.right" timestamp="1620886804230">
+      <screen x="0" y="25" width="1440" height="807" />
+    </state>
+    <state width="1419" height="200" key="GridCell.Tab.0.right/0.25.1440.807@0.25.1440.807" timestamp="1620886804230" />
   </component>
 </project>
