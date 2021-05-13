@@ -67,10 +67,6 @@ def log_out():
     print("You logged out.")
 
 def is_digit(check_input):
-    '''
-    function checking if your string is a pure digit, int
-    return : bool
-    '''
     if check_input.isdigit():
         return True
     return False
@@ -217,9 +213,22 @@ while True:
 
         elif user_input == 'rating list':
             while True:
-                fish_data = pd.read_csv("fish.txt", delimiter=" ")
-                print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
+                # menu:
+                print(f'Fish species in this tournament: ')
+                for index, item in enumerate(fishtype_list):
+                    print(f'{index} : {item}')
+                print(f'type \'exit\' to exit the program\n')
                 break
+
+            while True:
+                type = input("Type number: ")
+                try:
+                    if type == 1 or 2 or 3:
+                        type = int(type)
+                        print(fish_data.loc[fish_data['type'] == type].sort_values('length', ascending=False).reset_index(drop=True))
+                        break
+                except:
+                    print("Error")
 
         else:
             print("I don't understand.\
