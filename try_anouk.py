@@ -173,7 +173,7 @@ while True:
             while True:
                 user_name = input("Enter your name to search: ")
                 personal_catches = (fish_data.loc[fish_data['username'] == user_name])
-            p   rint(personal_catches)
+                print(personal_catches)
 
         elif user_input == 'profile':
             while True:
