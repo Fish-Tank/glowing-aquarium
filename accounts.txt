@@ -1,3 +1,4 @@
 username email password
-test1 test1@1 hallom sfd
-
+damian damian@fish.com panda 
+anouk anouk@fish.com fish 
+nicolas nicolas@fish.com hase 
