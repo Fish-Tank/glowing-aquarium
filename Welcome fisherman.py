@@ -50,17 +50,6 @@ def user_exist(username, password):
     accounts_file.close()
     return exist
 
-def username_exists(username):
-    accounts_file = open("accounts.txt", "r")
-    accounts_file_data = accounts_file.readlines()
-    exist = False
-    for i in range(len(accounts_file_data)):
-        splited_data = accounts_file_data[i].split()
-        if username == splited_data[0]:
-            exist = True
-            break
-    accounts_file.close()
-    return exist
 
 def log_in():
     user_name = input("Enter your user name:>> ")
@@ -110,7 +99,6 @@ def check_leaderboards():
 
 
 
-
 fishtype_list = ['perch' , 'pike' , 'catfish']
 
 while True:
@@ -125,7 +113,14 @@ while True:
             for i in range(len(commands)):
                 print(commands[i])
         elif user_input == "create account":
-            user_name = input("Enter user name :>> ")
+            while True:
+                user_name = input("Enter user name :>> ")
+                new_account_data = account_data[['username']]
+                row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+                if user_name not in row:
+                    break
+                else:
+                    print(f"{user_name} is already taken, please choose !")
             if len(user_name) < 4:
                 print("this user name is too short. Enter a valid user name")
                 user_name = input("Enter user name :>> ")
@@ -156,21 +151,24 @@ while True:
                 # menu:
                 print(f'Fish species in this tournament: ')
                 for index, item in enumerate(fishtype_list):
-                    print(f'{index} : {item}')
+                    print(f'{index+1} : {item}')
                 print(f'type \'exit\' to exit the program\n')
                 break
             # set user input to nothing to force entry into the while loop
             type = ''
+
             while type != 'exit':
                 type = input('select the species you caught from the list above: ')
 
+
+
                 # make sure the user types an actual integer if the input is not q (to quit)
-                while type != 'exit' and not is_digit(type):
+                while type != 'q' and not is_digit(type):
                     print(f'please try again, integer is required as input')
-                    type = input('select the species you caught from the list above:')
+                    type = input('select the species you caught form the list above:')
 
                 # if the user does not want to quit, we will print the choice
-                if type != 'exit':
+                if type != 'q':
                     try:
                         print(f'You chose {fishtype_list[int(type)]}')
                         break
@@ -188,8 +186,7 @@ while True:
                 except ValueError:
                     print("This is not a number! Is it so hard to enter a number? ")
 
-            lake = input("Enter lake you caught your fish in :>> ")
-
+            lake = input("Enter lake :>> ")
             user_name = input("Enter the username who caught the fish: ")
             # save data
             save_fish_data(type, length, lake, user_name)
@@ -205,10 +202,7 @@ while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
                 row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
-
-                if user_name == "exit":
-                    break
-                elif user_name in row:
+                if user_name in row:
                     personal_catches = (fish_data.loc[fish_data['username'] == user_name])
                     print(personal_catches)
                     break
@@ -226,19 +220,16 @@ while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
                 row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
-                if user_name == "exit":
-                    break
-                elif user_name in row:
+                if user_name in row:
                     personal_catches = (account_data.loc[account_data['username'] == user_name])
                     print(personal_catches)
                     break
                 else:
-                    print("This this username doesn't exist! Please create an account! ")
-
+                    print("This this username doesn't exist!")
 
         elif user_input == 'rating list':
-            check_leaderboards()
 
+            check_leaderboards()
 
 
         else:
