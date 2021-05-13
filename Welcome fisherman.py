@@ -2,6 +2,8 @@ import pandas as pd
 account_data = pd.read_csv("accounts.txt", delimiter=" ")
 fish_data = pd.read_csv("fish.txt", delimiter=" ")
 
+
+
 commands = [
     "exit > exit the program",
     "help > show all the commands",
@@ -25,6 +27,13 @@ print('Welcome to the Fishing-Tournament App... ')
 def save_user_data(username, email, password):
     accounts_file = open("accounts.txt", "a")
     accounts_file.write(f"{username} {email} {password} \n")
+    accounts_file.close()
+    print("Account created sucessfully!")
+
+def read_user_data(username, email, password):
+    accounts_file = open("accounts.txt", "r")
+    accounts_file = accounts_file.readlines()
+
     accounts_file.close()
     print("Account created sucessfully!")
 
@@ -139,16 +148,16 @@ while True:
                 break
             # set user input to nothing to force entry into the while loop
             type = ''
-            while type != 'q':
+            while type != 'exit':
                 type = input('select the species you caught form the list above: ')
 
                 # make sure the user types an actual integer if the input is not q (to quit)
-                while type != 'q' and not is_digit(type):
+                while type != 'exit' and not is_digit(type):
                     print(f'please try again, integer is required as input')
                     type = input('select the species you caught form the list above:')
 
                 # if the user does not want to quit, we will print the choice
-                if type != 'q':
+                if type != 'exit':
                     try:
                         print(f'You chose {fishtype_list[int(type)]}')
                         break
@@ -171,6 +180,10 @@ while True:
 
 
         elif user_input == 'achievements':
+
+
+
+
             while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
@@ -184,15 +197,16 @@ while True:
 
 
         elif user_input == 'profile':
-            user_name = input("Enter your name to search: ")
-            new_account_data = account_data[['username']]
-            row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
-            if user_name in row:
-                personal_catches = (account_data.loc[account_data['username'] == user_name])
-                print(personal_catches)
-                break
-            else:
-                print("This this username doesn't exist!")
+            while True:
+                user_name = input("Enter your name to search: ")
+                new_account_data = account_data[['username']]
+                row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+                if user_name in row:
+                    personal_catches = (account_data.loc[account_data['username'] == user_name])
+                    print(personal_catches)
+                    break
+                else:
+                    print("This this username doesn't exist!")
 
         elif user_input == 'rating list':
             fish_data = fish_data[['type', 'length', 'lake', 'username']]

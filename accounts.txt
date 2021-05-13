@@ -1,4 +1,6 @@
-username email password
-damian damian@fish.com panda 
+username email password NaN
+damian damian@fish.com panda
 anouk anouk@fish.com fish 
 nicolas nicolas@fish.com hase 
+serge serge@bigpike.com captain 
+jonas jonas@ jonii 
