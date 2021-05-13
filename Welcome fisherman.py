@@ -1,8 +1,9 @@
 import pandas as pd
-account_data = pd.read_csv("accounts.txt", delimiter=" ")
-fish_data = pd.read_csv("fish.txt", delimiter=" ")
+account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
 
-
+account_data.columns = ['username', 'email', 'password']
+fish_data.columns = ['type', 'length', 'lake', 'username']
 
 commands = [
     "exit > exit the program",
@@ -26,20 +27,13 @@ print('Welcome to the Fishing-Tournament App... ')
 
 def save_user_data(username, email, password):
     accounts_file = open("accounts.txt", "a")
-    accounts_file.write(f"{username} {email} {password} \n")
-    accounts_file.close()
-    print("Account created sucessfully!")
-
-def read_user_data(username, email, password):
-    accounts_file = open("accounts.txt", "r")
-    accounts_file = accounts_file.readlines()
-
+    accounts_file.write(f"{username} {email} {password}\n")
     accounts_file.close()
     print("Account created sucessfully!")
 
 def save_fish_data(type, length, lake, user_name):
     fish_file = open("fish.txt", "a")
-    fish_file.write(f"{type} {length} {lake} {user_name} \n")
+    fish_file.write(f"{type} {length} {lake} {user_name}\n")
     fish_file.close()
     print("Catch submitted sucessfully!")
 
@@ -148,16 +142,16 @@ while True:
                 break
             # set user input to nothing to force entry into the while loop
             type = ''
-            while type != 'exit':
+            while type != 'q':
                 type = input('select the species you caught form the list above: ')
 
                 # make sure the user types an actual integer if the input is not q (to quit)
-                while type != 'exit' and not is_digit(type):
+                while type != 'q' and not is_digit(type):
                     print(f'please try again, integer is required as input')
                     type = input('select the species you caught form the list above:')
 
                 # if the user does not want to quit, we will print the choice
-                if type != 'exit':
+                if type != 'q':
                     try:
                         print(f'You chose {fishtype_list[int(type)]}')
                         break
@@ -180,10 +174,11 @@ while True:
 
 
         elif user_input == 'achievements':
+            account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+            fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
 
-
-
-
+            account_data.columns = ['username', 'email', 'password']
+            fish_data.columns = ['type', 'length', 'lake', 'username']
             while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
@@ -195,8 +190,13 @@ while True:
                 else:
                     print("This this username doesn't exist!")
 
-
         elif user_input == 'profile':
+            account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+            fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
+
+            account_data.columns = ['username', 'email', 'password']
+            fish_data.columns = ['type', 'length', 'lake', 'username']
+
             while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
@@ -208,6 +208,13 @@ while True:
                 else:
                     print("This this username doesn't exist!")
 
+
         elif user_input == 'rating list':
-            fish_data = fish_data[['type', 'length', 'lake', 'username']]
-            print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
+            while True:
+                fish_data = pd.read_csv("fish.txt", delimiter=" ")
+                print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
+                break
+
+        else:
+            print("I don't understand.\
+            Please enter a valid command or type 'help'.")
