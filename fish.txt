@@ -1,5 +1,10 @@
-type length lake username
 2 34.0 bodensee damian
-2 200.0 Murtensee anouk
-2 249.0 Bodensee samuel
+<<<<<<< Updated upstream
+1 200.0 Murtensee anouk
+3 249.0 Bodensee samuel
 2 210.0 bodensee appenzeller
+=======
+0 200.0 Murtensee anouk
+2 249.0 Bodensee samuel
+1 210.0 bodensee appenzeller
+>>>>>>> Stashed changes
