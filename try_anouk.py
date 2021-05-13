@@ -171,15 +171,15 @@ while True:
 
         elif user_input == 'achievements':
             while True:
-            user_name = input("Enter your name to search: ")
-            personal_catches = (fish_data.loc[fish_data['username'] == user_name])
-            print(personal_catches)
+                user_name = input("Enter your name to search: ")
+                personal_catches = (fish_data.loc[fish_data['username'] == user_name])
+            p   rint(personal_catches)
 
         elif user_input == 'profile':
             while True:
-            user_name = input("Enter your name to search: ")
-            personal_catches = (account_data.loc[account_data['username'] == user_name])
-            print(personal_catches)
+                user_name = input("Enter your name to search: ")
+                personal_catches = (account_data.loc[account_data['username'] == user_name])
+                print(personal_catches)
 
         else:
             print("I don't understand.\
