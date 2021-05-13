@@ -1,8 +1,8 @@
 username email password
-damian damian.sdfsdf@sdfsdf hallo
-anouk anouk.heiz@fishing.com fish
-Nicolas nicolas@hsg taxifahrer
-Hans hans@sdfsd fritz
-Alex alex@fishing.com Fisch
-marc marc@fish hund
-Hans hans.mueller@hotmail.com Fishingapp 
+damian damian@fish coffee
+anouk anouk@fish fish
+fish fish@fish fish
+coffee coffee@fish fish
+labello labello@fish fish
+samuel samuel@fish fish
+appenzeller app@ water
