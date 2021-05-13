@@ -19,7 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="adf8c479-b97d-4ce0-8f13-6299775bd4de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login.py" afterDir="false" />
+    </list>
+>>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +66,11 @@
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.Welcome fisherman">
+=======
+  <component name="RunManager" selected="Python.test">
+>>>>>>> main
     <configuration name="Login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="glowing-aquarium" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,9 +178,15 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Python.Welcome fisherman" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.parsers" />
+=======
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.parsers" />
+        <item itemvalue="Python.Welcome fisherman" />
+>>>>>>> main
         <item itemvalue="Python.Login" />
         <item itemvalue="Python.try_anouk" />
       </list>
