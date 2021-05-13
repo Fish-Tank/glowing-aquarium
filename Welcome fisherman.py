@@ -169,20 +169,31 @@ while True:
             # save data
             save_fish_data(type, length, lake, user_name)
 
+
         elif user_input == 'achievements':
             while True:
-            user_name = input("Enter your name to search: ")
-            personal_catches = (fish_data.loc[fish_data['username'] == user_name])
-            print(personal_catches)
+                user_name = input("Enter your name to search: ")
+                new_account_data = account_data[['username']]
+                row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+                if user_name in row:
+                    personal_catches = (fish_data.loc[fish_data['username'] == user_name])
+                    print(personal_catches)
+                    break
+                else:
+                    print("This this username doesn't exist!")
+
 
         elif user_input == 'profile':
-            while True:
             user_name = input("Enter your name to search: ")
-            personal_catches = (account_data.loc[account_data['username'] == user_name])
-            print(personal_catches)
+            new_account_data = account_data[['username']]
+            row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+            if user_name in row:
+                personal_catches = (account_data.loc[account_data['username'] == user_name])
+                print(personal_catches)
+                break
+            else:
+                print("This this username doesn't exist!")
 
-        else:
-            print("I don't understand.\
-            Please enter a valid command or type 'help'.")
-
-
+        elif user_input == 'rating list':
+            fish_data = fish_data[['type', 'length', 'lake', 'username']]
+            print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
