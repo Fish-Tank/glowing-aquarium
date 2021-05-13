@@ -11,10 +11,10 @@ The program runs on python 3.9 inside the terminal and could be implemented into
 
 
 ## Install
-Download code into any python terminal
-Install python interepreter
-Install pip and update to newest version
-Insall pandas and update to newest version
+- Download code into any python terminal
+- Install python interepreter
+- Install pip and update to newest version
+- Insall pandas and update to newest version
 
 Have fun! :)
 
