@@ -73,21 +73,21 @@ def is_digit(check_input):
     return False
 
 def check_leaderboards():
-    print('1) Perch')
-    print('2) Pike')
-    print('3) Catfish')
+    print('0) Perch')
+    print('1) Pike')
+    print('2) Catfish')
     while True:
         type = int(input('For which species would you like to see the leaderboard? '))
 
-        if type == 1:
+        if type == 0:
             print('Perch!')
             print(fish_data.loc[fish_data['type'] == 0].sort_values('length', ascending=False).reset_index(drop=True))
             break
-        elif type == 2:
+        elif type == 1:
             print('Pike')
             print(fish_data.loc[fish_data['type'] == 1].sort_values('length', ascending=False).reset_index(drop=True))
             break
-        elif type == 3:
+        elif type == 2:
             print('Catfish')
             print(fish_data.loc[fish_data['type'] == 2].sort_values('length', ascending=False).reset_index(drop=True))
             break
@@ -120,7 +120,7 @@ while True:
                 if user_name not in row:
                     break
                 else:
-                    print(f"{user_name} is already taken, please choose !")
+                    print(f"{user_name} is already taken, please choose another one!")
             if len(user_name) < 4:
                 print("this user name is too short. Enter a valid user name")
                 user_name = input("Enter user name :>> ")
@@ -151,7 +151,7 @@ while True:
                 # menu:
                 print(f'Fish species in this tournament: ')
                 for index, item in enumerate(fishtype_list):
-                    print(f'{index+1} : {item}')
+                    print(f'{index} : {item}')
                 print(f'type \'exit\' to exit the program\n')
                 break
             # set user input to nothing to force entry into the while loop
@@ -227,7 +227,7 @@ while True:
                 else:
                     print("This this username doesn't exist!")
 
-        elif user_input == 'raking list':
+        elif user_input == 'ranking list':
 
             check_leaderboards()
 
