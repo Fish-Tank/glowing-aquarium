@@ -231,7 +231,6 @@ while True:
 
             check_leaderboards()
 
-
         else:
             print("I don't understand.\
             Please enter a valid command or type 'help'.")
