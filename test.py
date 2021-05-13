@@ -34,6 +34,11 @@ def save_fish_data(type, length, lake, user_name):
     fish_file.close()
     print("Catch submitted sucessfully!")
 
+def is_digit(check_input):
+    if check_input.isdigit():
+        return True
+    return False
+
 def user_exist(username, password):
     accounts_file = open("accounts.txt", "r")
     accounts_file_data = accounts_file.readlines()
