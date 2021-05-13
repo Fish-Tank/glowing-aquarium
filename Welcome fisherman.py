@@ -14,7 +14,7 @@ commands = [
     "fish > enter a fish",
     "profile > show all my profile details ",
     "achievements > show me my caught fish",
-    "rating list > enter a fish \n",
+    "ranking list > enter a fish \n",
 ]
 
 current_user = {
@@ -227,7 +227,7 @@ while True:
                 else:
                     print("This this username doesn't exist!")
 
-        elif user_input == 'rating list':
+        elif user_input == 'raking list':
 
             check_leaderboards()
 
