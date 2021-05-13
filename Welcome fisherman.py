@@ -152,7 +152,7 @@ while True:
                 # menu:
                 print(f'Fish species in this tournament: ')
                 for index, item in enumerate(fishtype_list):
-                    print(f'{index} : {item}')
+                    print(f'{index+1} : {item}')
                 print(f'type \'exit\' to exit the program\n')
                 break
             # set user input to nothing to force entry into the while loop
