@@ -19,7 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adf8c479-b97d-4ce0-8f13-6299775bd4de" name="Default Changelist" comment="" />
+<<<<<<< HEAD
+    <list default="true" id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="adf8c479-b97d-4ce0-8f13-6299775bd4de" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/save_accounts.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save_fish.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.txt" afterDir="false" />
+    </list>
+>>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +69,11 @@
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
   </component>
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.Welcome fisherman">
+=======
   <component name="RunManager" selected="Python.test">
+>>>>>>> main
     <configuration name="Login" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="glowing-aquarium" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,15 +181,21 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
+        <item itemvalue="Python.Welcome fisherman" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.parsers" />
+=======
         <item itemvalue="Python.test" />
         <item itemvalue="Python.Welcome fisherman" />
+>>>>>>> main
         <item itemvalue="Python.Login" />
         <item itemvalue="Python.parsers" />
         <item itemvalue="Python.try_anouk" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -201,5 +220,23 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1419" height="200" key="GridCell.Tab.0.bottom" timestamp="1620886804231">
+      <screen x="0" y="25" width="1440" height="807" />
+    </state>
+    <state width="1419" height="200" key="GridCell.Tab.0.bottom/0.25.1440.807@0.25.1440.807" timestamp="1620886804231" />
+    <state width="1419" height="200" key="GridCell.Tab.0.center" timestamp="1620886804229">
+      <screen x="0" y="25" width="1440" height="807" />
+    </state>
+    <state width="1419" height="200" key="GridCell.Tab.0.center/0.25.1440.807@0.25.1440.807" timestamp="1620886804229" />
+    <state width="1419" height="200" key="GridCell.Tab.0.left" timestamp="1620886804229">
+      <screen x="0" y="25" width="1440" height="807" />
+    </state>
+    <state width="1419" height="200" key="GridCell.Tab.0.left/0.25.1440.807@0.25.1440.807" timestamp="1620886804229" />
+    <state width="1419" height="200" key="GridCell.Tab.0.right" timestamp="1620886804230">
+      <screen x="0" y="25" width="1440" height="807" />
+    </state>
+    <state width="1419" height="200" key="GridCell.Tab.0.right/0.25.1440.807@0.25.1440.807" timestamp="1620886804230" />
   </component>
 </project>
