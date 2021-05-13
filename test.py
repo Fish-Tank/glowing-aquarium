@@ -117,16 +117,16 @@ while True:
                 break
             # set user input to nothing to force entry into the while loop
             type = ''
-            while type != 'q':
+            while type != 'exit':
                 type = input('select the species you caught form the list above: ')
 
                 # make sure the user types an actual integer if the input is not q (to quit)
-                while type != 'q' and not is_digit(type):
+                while type != 'exit' and not is_digit(type):
                     print(f'please try again, integer is required as input')
                     type = input('select the species you caught form the list above:')
 
                 # if the user does not want to quit, we will print the choice
-                if type != 'q':
+                if type != 'exit':
                     try:
                         print(f'You chose {fishtype_list[int(type)]}')
                         break

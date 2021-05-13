@@ -11,4 +11,4 @@ type length lake username
 1 12.0 Vierwaldstättersee damian
 2 43.0 Genfersee Hans
 1 100.0 Murtensee Hans
-0 35.2 Bodensee Hans
+0 35.2 Bodensee Hans2 249.0 Murtensee Damian 
