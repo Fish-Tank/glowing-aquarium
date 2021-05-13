@@ -1,6 +1,9 @@
 import pandas as pd
-account_data = pd.read_csv("accounts.txt", delimiter=" ")
-fish_data = pd.read_csv("fish.txt", delimiter=" ")
+account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
+
+account_data.columns = ['username', 'email', 'password']
+fish_data.columns = ['type', 'length', 'lake', 'username']
 
 commands = [
     "exit > exit the program",
@@ -24,13 +27,13 @@ print('Welcome to the Fishing-Tournament App... ')
 
 def save_user_data(username, email, password):
     accounts_file = open("accounts.txt", "a")
-    accounts_file.write(f"{username} {email} {password} \n")
+    accounts_file.write(f"{username} {email} {password}\n")
     accounts_file.close()
     print("Account created sucessfully!")
 
 def save_fish_data(type, length, lake, user_name):
     fish_file = open("fish.txt", "a")
-    fish_file.write(f"{type} {length} {lake} {user_name} \n")
+    fish_file.write(f"{type} {length} {lake} {user_name}\n")
     fish_file.close()
     print("Catch submitted sucessfully!")
 
@@ -171,6 +174,11 @@ while True:
 
 
         elif user_input == 'achievements':
+            account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+            fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
+
+            account_data.columns = ['username', 'email', 'password']
+            fish_data.columns = ['type', 'length', 'lake', 'username']
             while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
@@ -182,18 +190,31 @@ while True:
                 else:
                     print("This this username doesn't exist!")
 
-
         elif user_input == 'profile':
-            user_name = input("Enter your name to search: ")
-            new_account_data = account_data[['username']]
-            row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
-            if user_name in row:
-                personal_catches = (account_data.loc[account_data['username'] == user_name])
-                print(personal_catches)
-                break
-            else:
-                print("This this username doesn't exist!")
+            account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+            fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
+
+            account_data.columns = ['username', 'email', 'password']
+            fish_data.columns = ['type', 'length', 'lake', 'username']
+
+            while True:
+                user_name = input("Enter your name to search: ")
+                new_account_data = account_data[['username']]
+                row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+                if user_name in row:
+                    personal_catches = (account_data.loc[account_data['username'] == user_name])
+                    print(personal_catches)
+                    break
+                else:
+                    print("This this username doesn't exist!")
+
 
         elif user_input == 'rating list':
-            fish_data = fish_data[['type', 'length', 'lake', 'username']]
-            print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
+            while True:
+                fish_data = pd.read_csv("fish.txt", delimiter=" ")
+                print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
+                break
+
+        else:
+            print("I don't understand.\
+            Please enter a valid command or type 'help'.")
