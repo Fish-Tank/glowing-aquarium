@@ -6,4 +6,3 @@ labello labello@fish fish
 samuel samuel@fish fish
 appenzeller app@ water
 catfish cat@ fish
-greentea green@tea green
