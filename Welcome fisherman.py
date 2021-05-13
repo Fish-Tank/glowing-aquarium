@@ -138,16 +138,16 @@ while True:
                 break
             # set user input to nothing to force entry into the while loop
             type = ''
-            while type != 'q':
+            while type != 'exit':
                 type = input('select the species you caught form the list above: ')
 
                 # make sure the user types an actual integer if the input is not q (to quit)
-                while type != 'q' and not is_digit(type):
+                while type != 'exit' and not is_digit(type):
                     print(f'please try again, integer is required as input')
-                    type = input('select the species you caught form the list above:')
+                    type = input('select the species you caught from the list above:')
 
                 # if the user does not want to quit, we will print the choice
-                if type != 'q':
+                if type != 'exit':
                     try:
                         print(f'You chose {fishtype_list[int(type)]}')
                         break
@@ -163,7 +163,8 @@ while True:
                 except ValueError:
                     print("This is not a number! Is it so hard to enter a number? ")
 
-            lake = input("Enter lake :>> ")
+            lake = input("Enter lake you caught your fish in :>> ")
+
             user_name = input("Enter the username who caught the fish: ")
             # save data
             save_fish_data(type, length, lake, user_name)
@@ -179,7 +180,10 @@ while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
                 row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
-                if user_name in row:
+
+                if user_name == "exit":
+                    break
+                elif user_name in row:
                     personal_catches = (fish_data.loc[fish_data['username'] == user_name])
                     print(personal_catches)
                     break
@@ -197,12 +201,14 @@ while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
                 row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
-                if user_name in row:
+                if user_name == "exit":
+                    break
+                elif user_name in row:
                     personal_catches = (account_data.loc[account_data['username'] == user_name])
                     print(personal_catches)
                     break
                 else:
-                    print("This this username doesn't exist!")
+                    print("This this username doesn't exist! Please create an account! ")
 
 
         elif user_input == 'rating list':
