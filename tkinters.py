@@ -3,8 +3,11 @@
 #Import Data. One is for the account and the second is for the fish
 
 import pandas as pd
-account_data = pd.read_csv("accounts.txt", delimiter=" ")
-fish_data = pd.read_csv("fish.txt", delimiter=" ")
+account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
+
+account_data.columns = ['username', 'email', 'password']
+fish_data.columns = ['type', 'length', 'lake', 'username']
 
 #Commands for the program.
 commands = [
@@ -32,7 +35,7 @@ print('Welcome to the Fishing-Tournament App... ')
 # Create user with username, email and password. If sucessfully created, progam continues.
 def save_user_data(username, email, password):
     accounts_file = open("accounts.txt", "a")
-    accounts_file.write(f"{username} {email} {password} \n")
+    accounts_file.write(f"{username} {email} {password}\n")
     accounts_file.close()
     print("Account created sucessfully!")
 
@@ -40,7 +43,7 @@ def save_user_data(username, email, password):
 #Enter data for your catch (type, length, user_name).
 def save_fish_data(type, length, lake, user_name):
     fish_file = open("fish.txt", "a")
-    fish_file.write(f"{type} {length} {lake} {user_name} \n")
+    fish_file.write(f"{type} {length} {lake} {user_name}\n")
     fish_file.close()
     print("Catch submitted sucessfully!")
 
@@ -57,15 +60,89 @@ def user_exist(username, password):
     accounts_file.close()
     return exist
 
+#Built in function
+# Program to make a simple
+# login screen
+import tkinter as tk
+root = tk.Tk()
+# setting the windows size
+root.geometry("600x400")
+# declaring string variable
+# for storing name and password
+name_var = tk.StringVar()
+passw_var = tk.StringVar()
+# defining a function that will
+# get the name and password and
+# print them on the screen
+def submit():
+    name = name_var.get()
+    password = passw_var.get()
+    print("The name is : " + name)
+    print("The password is : " + password)
+    name_var.set("")
+    passw_var.set("")
+# creating a label for
+# name using widget Label
+    name_label = tk.Label(root, text='Username', font=('calibre', 10, 'bold'))
+# creating a entry for input
+# name using widget Entry
+    name_entry = tk.Entry(root, textvariable=name_var, font=('calibre', 10, 'normal'))
+# creating a label for password
+    passw_label = tk.Label(root, text='Password', font=('calibre', 10, 'bold'))
+# creating a entry for password
+    passw_entry = tk.Entry(root, textvariable=passw_var, font=('calibre', 10, 'normal'), show='*')
+# creating a button using the widget
+# Button that will call the submit function
+    sub_btn = tk.Button(root, text='Submit', command=submit)
+# placing the label and entry in
+# the required position using grid
+# method
+    name_label.grid(row=0, column=0)
+    name_entry.grid(row=0, column=1)
+    passw_label.grid(row=1, column=0)
+    passw_entry.grid(row=1, column=1)
+    sub_btn.grid(row=2, column=1)
+# performing an infinite loop
+# for the window to display
+    root.mainloop()
+
 #To log in the program
 def log_in():
-    user_name = input("Enter your user name:>> ")
-    password = input("Enter your user password:>> ")
+    name = name_var.get()
+    password = passw_var.get()
+    print("The name is : " + name)
+    print("The password is : " + password)
+    name_var.set("")
+    passw_var.set("")
+    # creating a label for
+    # name using widget Label
+    name_label = tk.Label(root, text='Username', font=('calibre', 10, 'bold'))
+    # creating a entry for input
+    # name using widget Entry
+    name_entry = tk.Entry(root, textvariable=name_var, font=('calibre', 10, 'normal'))
+    # creating a label for password
+    passw_label = tk.Label(root, text='Password', font=('calibre', 10, 'bold'))
+    # creating a entry for password
+    passw_entry = tk.Entry(root, textvariable=passw_var, font=('calibre', 10, 'normal'), show='*')
+    # creating a button using the widget
+    # Button that will call the submit function
+    sub_btn = tk.Button(root, text='Submit', command=submit)
+    # placing the label and entry in
+    # the required position using grid
+    # method
+    name_label.grid(row=0, column=0)
+    name_entry.grid(row=0, column=1)
+    passw_label.grid(row=1, column=0)
+    passw_entry.grid(row=1, column=1)
+    sub_btn.grid(row=2, column=1)
+    # performing an infinite loop
+    # for the window to display
+    root.mainloop()
     # read data
     if user_exist(user_name, password):
-        current_user["name"] = user_name
+        current_user["name"] = name
         current_user["password"] = password
-        print("You logged in sucessfully. Welcome %s" % user_name)
+        print("You logged in sucessfully. Welcome %s" % name)
     else:
         print("Account does not exist or you entered user name or password wrong!")
 
@@ -183,6 +260,11 @@ while True:
 
 #data output
         elif user_input == 'achievements':
+            account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+            fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
+
+            account_data.columns = ['username', 'email', 'password']
+            fish_data.columns = ['type', 'length', 'lake', 'username']
             while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
@@ -194,18 +276,31 @@ while True:
                 else:
                     print("This this username doesn't exist!")
 
-
         elif user_input == 'profile':
-            user_name = input("Enter your name to search: ")
-            new_account_data = account_data[['username']]
-            row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
-            if user_name in row:
-                personal_catches = (account_data.loc[account_data['username'] == user_name])
-                print(personal_catches)
-                break
-            else:
-                print("This this username doesn't exist!")
+            account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
+            fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
+
+            account_data.columns = ['username', 'email', 'password']
+            fish_data.columns = ['type', 'length', 'lake', 'username']
+
+            while True:
+                user_name = input("Enter your name to search: ")
+                new_account_data = account_data[['username']]
+                row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+                if user_name in row:
+                    personal_catches = (account_data.loc[account_data['username'] == user_name])
+                    print(personal_catches)
+                    break
+                else:
+                    print("This this username doesn't exist!")
+
 
         elif user_input == 'rating list':
-            fish_data = fish_data[['type', 'length', 'lake', 'username']]
-            print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
+            while True:
+                fish_data = pd.read_csv("fish.txt", delimiter=" ")
+                print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
+                break
+
+        else:
+            print("I don't understand.\
+            Please enter a valid command or type 'help'.")
