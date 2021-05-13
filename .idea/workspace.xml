@@ -23,7 +23,10 @@
     <list default="true" id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="" />
 =======
     <list default="true" id="adf8c479-b97d-4ce0-8f13-6299775bd4de" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Login.py" beforeDir="false" afterPath="$PROJECT_DIR$/Login.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save_accounts.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/save_fish.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/accounts.txt" afterDir="false" />
     </list>
 >>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
@@ -184,10 +187,10 @@
         <item itemvalue="Python.parsers" />
 =======
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.parsers" />
         <item itemvalue="Python.Welcome fisherman" />
 >>>>>>> main
         <item itemvalue="Python.Login" />
+        <item itemvalue="Python.parsers" />
         <item itemvalue="Python.try_anouk" />
       </list>
     </recent_temporary>
@@ -198,7 +201,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="747eee7d-33b0-404a-ae08-e99b3f966477" name="Default Changelist" comment="" />
+      <changelist id="adf8c479-b97d-4ce0-8f13-6299775bd4de" name="Default Changelist" comment="" />
       <created>1620294162087</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
