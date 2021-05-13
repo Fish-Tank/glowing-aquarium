@@ -1,7 +1,3 @@
-#Welcome to the fisherman program. In this program a user can upload this catches and can compare it with others
-
-#Import Data. One is for the account and the second is for the fish
-
 import pandas as pd
 account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
 fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
@@ -9,45 +5,39 @@ fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
 account_data.columns = ['username', 'email', 'password']
 fish_data.columns = ['type', 'length', 'lake', 'username']
 
-#Commands for the program.
 commands = [
     "exit > exit the program",
     "help > show all the commands",
-    "create account > to create a new user",
+    "create account > create a new user to stay informed about the tournament",
     "login > to login to your account",
     "logout > to logout your account",
     "fish > enter a fish",
     "profile > show all my profile details ",
-    "achievements > show me my cought fish",
-    "rating list > enter a fish",
+    "achievements > show me my caught fish",
+    "ranking list > enter a fish \n",
 ]
 
-#Current user
 current_user = {
     "name": None,
     "password": None,
 }
 
-#Introduction mesage for the user
-print('Welcome to the Fishing-Tournament App... ')
+print('Welcome to the Fishing-Tournament Program \nSelect a command below and start today\'s fishing tournament :)\nGood luck!\n')
+for i in range(len(commands)):
+    print(commands[i])
 
-#Open a text file for appending text
-# Create user with username, email and password. If sucessfully created, progam continues.
 def save_user_data(username, email, password):
     accounts_file = open("accounts.txt", "a")
     accounts_file.write(f"{username} {email} {password}\n")
     accounts_file.close()
     print("Account created sucessfully!")
 
-#Open a text file for appending text
-#Enter data for your catch (type, length, user_name).
 def save_fish_data(type, length, lake, user_name):
     fish_file = open("fish.txt", "a")
     fish_file.write(f"{type} {length} {lake} {user_name}\n")
     fish_file.close()
     print("Catch submitted sucessfully!")
 
-#Open for text file for reading text
 def user_exist(username, password):
     accounts_file = open("accounts.txt", "r")
     accounts_file_data = accounts_file.readlines()
@@ -60,7 +50,7 @@ def user_exist(username, password):
     accounts_file.close()
     return exist
 
-#To log in the program
+
 def log_in():
     user_name = input("Enter your user name:>> ")
     password = input("Enter your user password:>> ")
@@ -72,25 +62,45 @@ def log_in():
     else:
         print("Account does not exist or you entered user name or password wrong!")
 
-#To log out from your account
+
 def log_out():
     current_user["name"] = None
     print("You logged out.")
 
-#Function checking if your string is a pure digit.
 def is_digit(check_input):
-    '''
-    function checking if your string is a pure digit, int
-    return : bool
-    '''
     if check_input.isdigit():
         return True
     return False
 
-#list of all possible fishes to catch
+def check_leaderboards():
+    print('1) Perch')
+    print('2) Pike')
+    print('3) Catfish')
+    while True:
+        type = int(input('For which species would you like to see the leaderboard? '))
+
+        if type == 1:
+            print('Perch!')
+            print(fish_data.loc[fish_data['type'] == 0].sort_values('length', ascending=False).reset_index(drop=True))
+            break
+        elif type == 2:
+            print('Pike')
+            print(fish_data.loc[fish_data['type'] == 1].sort_values('length', ascending=False).reset_index(drop=True))
+            break
+        elif type == 3:
+            print('Catfish')
+            print(fish_data.loc[fish_data['type'] == 2].sort_values('length', ascending=False).reset_index(drop=True))
+            break
+        else:
+            print('That\'s not an option!')
+
+
+
+
+
+
 fishtype_list = ['perch' , 'pike' , 'catfish']
 
-#Menu for creating and save user data
 while True:
         if current_user["name"] == None:
             user_input = input("Enter a command or type help :>> ").lower()
@@ -103,7 +113,14 @@ while True:
             for i in range(len(commands)):
                 print(commands[i])
         elif user_input == "create account":
-            user_name = input("Enter user name :>> ")
+            while True:
+                user_name = input("Enter user name :>> ")
+                new_account_data = account_data[['username']]
+                row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
+                if user_name not in row:
+                    break
+                else:
+                    print(f"{user_name} is already taken, please choose !")
             if len(user_name) < 4:
                 print("this user name is too short. Enter a valid user name")
                 user_name = input("Enter user name :>> ")
@@ -121,41 +138,29 @@ while True:
             # save data
             save_user_data(user_name, email, password1)
 
-#login for tournament
+
         elif user_input == "login":
 
             log_in()
 
-            command = [
+            current_user = { "name": None, "password": None }
 
-                "exit > exit the program and submit the fish",
-
-                "help > show all the commands",
-
-                "fish > enter a fish",
-
-            ]
-
-            current_user = {
-
-                "name": None,
-
-                "password": None,
-
-            }
         elif user_input == "fish":
 
             while True:
                 # menu:
                 print(f'Fish species in this tournament: ')
                 for index, item in enumerate(fishtype_list):
-                    print(f'{index} : {item}')
+                    print(f'{index+1} : {item}')
                 print(f'type \'exit\' to exit the program\n')
                 break
             # set user input to nothing to force entry into the while loop
             type = ''
-            while type != 'q':
-                type = input('select the species you caught form the list above: ')
+
+            while type != 'exit':
+                type = input('select the species you caught from the list above: ')
+
+
 
                 # make sure the user types an actual integer if the input is not q (to quit)
                 while type != 'q' and not is_digit(type):
@@ -176,6 +181,8 @@ while True:
                     length = float(length)
                     if length < 250:
                         break
+                    elif length > 250:
+                        print("That would be bigger than any fish that swims in the Swiss lakes ;) Try again!")
                 except ValueError:
                     print("This is not a number! Is it so hard to enter a number? ")
 
@@ -184,7 +191,7 @@ while True:
             # save data
             save_fish_data(type, length, lake, user_name)
 
-#data output
+
         elif user_input == 'achievements':
             account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
             fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
@@ -220,12 +227,9 @@ while True:
                 else:
                     print("This this username doesn't exist!")
 
+        elif user_input == 'raking list':
 
-        elif user_input == 'rating list':
-            while True:
-                fish_data = pd.read_csv("fish.txt", delimiter=" ")
-                print(fish_data.sort_values('length', ascending=False).reset_index(drop=True))
-                break
+            check_leaderboards()
 
         else:
             print("I don't understand.\
