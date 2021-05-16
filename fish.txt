@@ -7,3 +7,7 @@
 1 210.0 bodensee appenzeller
 1 234.0 bodensee greentea
 2 150.0 bodensee alex
+0 40.0 Murtensee Hans
+0 249.5 Bodensee nicolas.rentsch
+1 249.9 Bodensee Hans
+2 240.0 Murtensee nicolas.rentsch
