@@ -19,7 +19,7 @@ commands = [
     "fish > enter a fish",
     "profile > show all my profile details ",
     "achievements > show me my caught fish",
-    "ranking list > enter a fish",
+    "leaderboard > check current tournament standings",
     "results > show me the biggest 5 catches",
     "lakes > show me catches from lakes",
     "average > show me average from lakes",
@@ -58,7 +58,7 @@ count_fish = [
     "count vierwaldstättersee > show me all fish caught in vierwaldstättersee\n",
 ]
 
-#
+
 current_user = {
     "name": None,
     "password": None,
@@ -70,7 +70,6 @@ for i in range(len(commands)):
     print(commands[i])
 
 #defintion for txt file for the creation of an account
-#TODO: Instead of writing to txt file, write to csv
 def save_user_data(username, email, password):
     accounts_file = open("accounts.txt", "a")
     accounts_file.write(f"{username} {email} {password}\n")
@@ -84,7 +83,7 @@ def save_fish_data(type, length, lake, user_name):
     fish_file.close()
     print("Catch submitted sucessfully!")
 
-#defintion for
+#defintion to check in file if user and password exists
 def user_exist(username, password):
     accounts_file = open("accounts.txt", "r")
     accounts_file_data = accounts_file.readlines()
@@ -219,17 +218,17 @@ while True:
                 break
             # set user input to nothing to force entry into the while loop
             type = ''
-            #
+
             while type != 'exit':
                 type = input('select the species you caught from the list above: ')
 
                 # make sure the user types an actual integer if the input is not q (to quit)
-                while type != 'q' and not is_digit(type):
+                while type != 'exit' and not is_digit(type):
                     print(f'please try again, integer is required as input')
                     type = input('select the species you caught form the list above:')
 
                 # if the user does not want to quit, we will print the choice
-                if type != 'q':
+                if type != 'exit':
                     try:
                         print(f'You chose {fishtype_list[int(type)]}')
                         break
@@ -261,12 +260,14 @@ while True:
             fish_data.columns = ['type', 'length', 'lake', 'username']
             #user has to enter his name and program checks if user exists. If successful. The catches will be displayed
             while True:
-                user_name = input("Enter your name to search: ")
+                user_name = input("Enter your name to search: \nor type exit to return to the start :>> ")
                 new_account_data = account_data[['username']]
                 row = new_account_data.to_csv(header=None, index=False).strip('\n').split('\n')
                 if user_name in row:
                     personal_catches = (fish_data.loc[fish_data['username'] == user_name])
                     print(personal_catches)
+                    break
+                elif user_name == "exit":
                     break
                 #if user doesn't exist
                 else:
@@ -291,7 +292,7 @@ while True:
                 else:
                     print("This this username doesn't exist!")
         #user can check the leaderboard
-        elif user_input == 'ranking list':
+        elif user_input == 'leaderboard':
 
             check_leaderboards()
         #user can check the five highest catches
@@ -435,6 +436,3 @@ while True:
         else:
             print("I don't understand.\
             Please enter a valid command or type 'help'.")
-
-#
-#Source of problem: "1" instead of 1. Find a way to convert string value in a dataframe to integer.
