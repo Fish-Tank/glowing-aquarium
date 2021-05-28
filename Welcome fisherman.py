@@ -9,21 +9,20 @@ fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
 account_data.columns = ['username', 'email', 'password']
 fish_data.columns = ['type', 'length', 'lake', 'username']
 
-#commands for user in the program
+#commands for the user in the program
 commands = [
     "exit > exit the program",
     "help > show all the commands",
     "create account > create a new user to stay informed about the tournament",
     "login > to login to your account",
-    "logout > to logout your account",
     "fish > enter a fish",
     "profile > show all my profile details ",
     "achievements > show me my caught fish",
     "leaderboard > check current tournament standings",
     "results > show me the biggest 5 catches",
     "lakes > show me catches from lakes",
-    "average > show me average from lakes",
-    "count > show me amount of cought fishes from lakes\n"
+    "average > Show me the average of the length of the caught fish from the lakes",
+    "count > Show me the amount of fish caught from lakes\n"
 ]
 
 #commands to display catches from the lakes with all information
@@ -36,7 +35,7 @@ show_catches_from_lakes = [
     "vierwaldstättersee > show me catches from Vierwaldstättersee\n",
 ]
 
-#commands to display catches
+#commands to display the catches from the lakes with average length
 average_of_lake = [
     "Type one of the lakes to see the average size of a cought fish\n",
     "median of all > show me average from all lakes",
@@ -47,7 +46,7 @@ average_of_lake = [
     "median of vierwaldstättersee > show me average from Vierwaldstättersee\n",
 ]
 
-#Commands to display the amount of fish caught
+#commands to display the amount of fish caught
 count_fish = [
     "Type one of the lakes to see the amount of caught fish\n",
     "count all > show me all fish caught",
@@ -58,13 +57,12 @@ count_fish = [
     "count vierwaldstättersee > show me all fish caught in vierwaldstättersee\n",
 ]
 
-
 current_user = {
     "name": None,
     "password": None,
 }
 
-#start in to the program with introduction message
+#start into the program with an introduction message
 print('Welcome to the Fishing-Tournament Program \nSelect a command below and start today\'s fishing tournament :)\nGood luck!\n')
 for i in range(len(commands)):
     print(commands[i])
@@ -83,7 +81,7 @@ def save_fish_data(type, length, lake, user_name):
     fish_file.close()
     print("Catch submitted sucessfully!")
 
-#defintion to check in file if user and password exists
+#definition to check in the file if user and password exist
 def user_exist(username, password):
     accounts_file = open("accounts.txt", "r")
     accounts_file_data = accounts_file.readlines()
@@ -100,7 +98,7 @@ def user_exist(username, password):
 def log_in():
     user_name = input("Enter your user name:>> ")
     password = input("Enter your user password:>> ")
-    # read data
+    #read data
     if user_exist(user_name, password):
         current_user["name"] = user_name
         current_user["password"] = password
@@ -108,7 +106,7 @@ def log_in():
     else:
         print("Account does not exist or you entered user name or password wrong!")
 
-#defintion for loging out
+#defintion for logout
 def log_out():
     current_user["name"] = None
     print("You logged out.")
@@ -150,7 +148,7 @@ def show_me_results():
 #list of possible fishes
 fishtype_list = ['perch' , 'pike' , 'catfish']
 
-#script, which is the interface with the user with all the function for him.
+#interface to the user with all functions for him/her
 while True:
         #input to enter a command or display the menu when the user is not logged in
         if current_user["name"] == None:
@@ -165,7 +163,7 @@ while True:
         elif user_input == 'help':
             for i in range(len(commands)):
                 print(commands[i])
-        #if user want to create an accout
+        #if user want to create an account
         elif user_input == "create account":
             #input for entering user name
             while True:
@@ -191,13 +189,13 @@ while True:
             #user has to set password and confirm it
             password1 = input("Enter password :>> ")
             password2 = input("Confirm password :>> ")
-            #to check if password is longer than four digits and if it is corrects
+            #to check if the password is longer than four digits, and if so, if it is correct
             if password2 != password1 or len(password1) < 4:
                 print(
                     "password does not match or it's too small. Please enter password again")
                 password1 = input("Enter password :>> ")
                 password2 = input("Confirm password :>> ")
-            # save data of the user (username, email and password)
+            #save data of the user (username, email and password)
             save_user_data(user_name, email, password1)
 
         #if user wants to log in
@@ -210,24 +208,24 @@ while True:
         elif user_input == "fish":
 
             while True:
-                # display menu of possible fishes:
+                #display menu with the possible fish species:
                 print(f'Fish species in this tournament: ')
                 for index, item in enumerate(fishtype_list):
                     print(f'{index} : {item}')
                 print(f'type \'exit\' to exit the program\n')
                 break
-            # set user input to nothing to force entry into the while loop
+            #set user input to nothing to force entry into while loop
             type = ''
 
             while type != 'exit':
                 type = input('select the species you caught from the list above: ')
 
-                # make sure the user types an actual integer if the input is not q (to quit)
+                #make sure the user types an actual integer if the input is not q (to quit)
                 while type != 'exit' and not is_digit(type):
                     print(f'please try again, integer is required as input')
                     type = input('select the species you caught form the list above:')
 
-                # if the user does not want to quit, we will print the choice
+                #if the user does not want to exit, it will print the choice
                 if type != 'exit':
                     try:
                         print(f'You chose {fishtype_list[int(type)]}')
@@ -237,7 +235,7 @@ while True:
             #entering the length of the fish
             while True:
                 length = input("Please enter fish length in cm:>> ")
-                #if fish is longer than 250cm, the user can not enter the fish and check if length is an integer
+                #if the fish is longer than 250 cm, the user cannot enter the fish and additionally check if the length is a digit
                 try:
                     length = float(length)
                     if length < 250:
@@ -246,19 +244,19 @@ while True:
                         print("That would be bigger than any fish that swims in the Swiss lakes ;) Try again!")
                 except ValueError:
                     print("This is not a number! Is it so hard to enter a number? ")
-            #user has to enter the lake, where he caught the fish
+            #user must enter the lake where he caught the fish
             lake = input("Enter lake :>> ")
             user_name = input("Enter the username who caught the fish: ")
-            # save data
+            #save data
             save_fish_data(type, length, lake, user_name)
-        #User can check all his caught fish
+        #user can check all his caught fish
         elif user_input == 'achievements':
             account_data = pd.read_csv("accounts.txt", delimiter=" ", header=None)
             fish_data = pd.read_csv("fish.txt", delimiter=" ", header=None)
 
             account_data.columns = ['username', 'email', 'password']
             fish_data.columns = ['type', 'length', 'lake', 'username']
-            #user has to enter his name and program checks if user exists. If successful. The catches will be displayed
+            #user has to enter his name and program checks if user exists. If successful, the catches will be displayed
             while True:
                 user_name = input("Enter your name to search: \nor type exit to return to the start :>> ")
                 new_account_data = account_data[['username']]
@@ -279,7 +277,7 @@ while True:
 
             account_data.columns = ['username', 'email', 'password']
             fish_data.columns = ['type', 'length', 'lake', 'username']
-            #user has to enter his name and if successful, his information will be displayed
+            #user has to enter his name and if successful, the information will be displayed
             while True:
                 user_name = input("Enter your name to search: ")
                 new_account_data = account_data[['username']]
@@ -288,7 +286,7 @@ while True:
                     personal_catches = (account_data.loc[account_data['username'] == user_name])
                     print(personal_catches)
                     break
-                # if user doesn't exist
+                #if user doesn't exist
                 else:
                     print("This this username doesn't exist!")
         #user can check the leaderboard
@@ -303,7 +301,7 @@ while True:
             Show_results_all = biggest.head(6)
             print(type(Show_results_all))
             print(Show_results_all)
-        #if user enters "lakes" and a new menu will be displayed
+        #if the user enters "lakes", a new menu will be displayed
         elif user_input == 'lakes':
             for i in range(len(show_catches_from_lakes)):
                 print(show_catches_from_lakes[i])
@@ -332,7 +330,7 @@ while True:
             catches_Vierwaldstättersee = fish_data.loc[fish_data['lake'].str.contains('Boden')]
             show_Vierwaldstättersee = catches_Vierwaldstättersee.head(5)
             print(show_Vierwaldstättersee)
-        #if user enters "average" and a new menu will be displayed
+        #if the user enters "average", a new menu will be displayed
         elif user_input == 'average':
             for i in range(len(average_of_lake)):
                 print(average_of_lake[i])
@@ -344,7 +342,7 @@ while True:
             print(type(average))
             print(average)
             Show_median_all = median_of_all.head(2)
-        #if the user enters "median of bodensee",he can see the average length from all catches from bodensee
+        #if the user enters "median of bodensee", from there he can see the average length from all catches
         elif user_input == "median of bodensee":
             median_of_bodensee = fish_data.loc[fish_data['lake'].str.contains('Bodensee')]
             dtry = pd.to_numeric(median_of_bodensee['length'])
@@ -352,7 +350,7 @@ while True:
             print(type(average))
             print(average)
             Show_median_bodensee = median_of_bodensee.head(2)
-        #if the user enters "median of murtensee",he can see the average length from all catches from murtensee
+        #if the user enters "median of murtensee", from there he can see the average length from all catches
         elif user_input == "median of murtensee":
             median_of_murtensee = fish_data.loc[fish_data['lake'].str.contains('Murten')]
             dtry = pd.to_numeric(median_of_murtensee['length'])
@@ -360,7 +358,7 @@ while True:
             print(type(average))
             print(average)
             Show_median_murtensee = median_of_murtensee.head(2)
-        #if the user enters "median of bielersee",he can see the average length from all catches from bielersee
+        #if the user enters "median of Lake bielersee", from there he can see the average length from all catches
         elif user_input == "median of bielersee":
             median_of_bielersee = fish_data.loc[fish_data['lake'].str.contains('Bieler')]
             dtry = pd.to_numeric(median_of_bielersee['length'])
@@ -368,15 +366,15 @@ while True:
             print(type(average))
             print(average)
             Show_median_bielersee = median_of_bielersee.head(2)
-        #if the user enters "median of neuenburgersee",he can see the average length from all catches from neuenburgersee
+        #if the user enters "median of neuenburgersee", from there he can see the average length from all catches
         elif user_input == "median of neuenburgersee":
             median_of_neuenburgersee = fish_data.loc[fish_data['lake'].str.contains('Neuenburgersee')]
             dtry = pd.to_numeric(median_of_neuenburgersee['length'])
             average = dtry.mean()
             print(type(average))
             print(average)
-            Show_median_neuenburgersee = median_of_neuenburgersee.head(2)
-        # if the user enters "median of vierwaldstättersee",he can see the average length from all catches from vierwaldstättersee
+            Show_median_neuenburgersee = ƒmedian_of_neuenburgersee.head(2)
+        #if the user enters "median of vierwaldstättersee", from there he can see the average length from all catches
         elif user_input == "median of vierwaldstättersee":
             median_of_vierwaldstättersee = fish_data.loc[fish_data['lake'].str.contains('Vierwaldstättersee')]
             dtry = pd.to_numeric(median_of_vierwaldstättersee['length'])
@@ -384,15 +382,15 @@ while True:
             print(type(average))
             print(average)
             Show_median_vierwaldstättersee = median_of_vierwaldstättersee.head(2)
-        #if user enters "count" and a new menu will be displayed
+        #if user enters "count", a new menu will be displayed
         elif user_input == 'count':
             for i in range(len(count_fish)):
                 print(count_fish[i])
-        #if the user enters "count all", the number of all fish caught will be displayed.
+        #if the user enters "count all", the number of all fish caught will be displayed
         elif user_input == 'count all':
             count = fish_data[['type']].value_counts()
             print(count)
-        #if the user enters "count bodensee", the number of all fish caught from the bodensee will be displayed.
+        #if the user enters "count bodensee", the number of all fish caught from there will be displayed
         elif user_input == 'count bodensee':
             count_of_bodensee = fish_data.loc[fish_data['lake'].str.contains('Bodensee')]
             dtry = pd.to_numeric(count_of_bodensee['type'])
@@ -400,7 +398,7 @@ while True:
             print(type(count))
             print(count)
             Show_count_of_bodensee = count_of_bodensee.head(2)
-        #if the user enters "count murtensee", the number of all fish caught from the murtensee will be displayed
+        #if the user enters "count murtensee", the number of all fish caught from there will be displayed
         elif user_input == 'count murtensee':
             count_of_murtensee = fish_data.loc[fish_data['lake'].str.contains('Murtensee')]
             dtry = pd.to_numeric(count_of_murtensee['type'])
@@ -408,7 +406,7 @@ while True:
             print(type(count))
             print(count)
             Show_count_of_murtensee = count_of_murtensee.head(2)
-        #if the user enters "count bielersee", the number of all fish caught from the bielersee will be displayed
+        #if the user enters "count bielersee", the number of all fish caught from there will be displayed
         elif user_input == 'count bielersee':
             count_of_bielersee = fish_data.loc[fish_data['lake'].str.contains('Bielersee')]
             dtry = pd.to_numeric(count_of_bielersee['type'])
@@ -416,7 +414,7 @@ while True:
             print(type(count))
             print(count)
             Show_count_of_bielersee = count_of_bielersee.head(2)
-        #if the user enters "count neuenburgersee", the number of all fish caught from the neuenburgersee will be displayed
+        #if the user enters "count neuenburgersee", the number of all fish caught from there will be displayed
         elif user_input == 'count neuenburgersee':
             count_of_neuenburgersee = fish_data.loc[fish_data['lake'].str.contains('Neuenburgersee')]
             dtry = pd.to_numeric(count_of_neuenburgersee['type'])
@@ -424,7 +422,7 @@ while True:
             print(type(count))
             print(count)
             Show_count_of_neuenburgersee = count_of_neuenburgersee.head(2)
-        # if the user enters "count vierwaldstättersee", the number of all fish caught from the vierwaldstättersee will be displayed
+        #if the user enters "count vierwaldstättersee", the number of all fish caught from there will be displayed
         elif user_input == 'count vierwaldstättersee':
             count_of_vierwaldstättersee = fish_data.loc[fish_data['lake'].str.contains('Vierwaldstättersee')]
             dtry = pd.to_numeric(count_of_vierwaldstättersee['type'])
