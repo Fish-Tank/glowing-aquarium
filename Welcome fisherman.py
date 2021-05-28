@@ -15,7 +15,6 @@ commands = [
     "help > show all the commands",
     "create account > create a new user to stay informed about the tournament",
     "login > to login to your account",
-    "logout > to logout your account",
     "fish > enter a fish",
     "profile > show all my profile details ",
     "achievements > show me my caught fish",
@@ -374,7 +373,7 @@ while True:
             average = dtry.mean()
             print(type(average))
             print(average)
-            Show_median_neuenburgersee = median_of_neuenburgersee.head(2)
+            Show_median_neuenburgersee = ƒmedian_of_neuenburgersee.head(2)
         #if the user enters "median of vierwaldstättersee", from there he can see the average length from all catches
         elif user_input == "median of vierwaldstättersee":
             median_of_vierwaldstättersee = fish_data.loc[fish_data['lake'].str.contains('Vierwaldstättersee')]
